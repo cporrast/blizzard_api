@@ -142,6 +142,9 @@ module BlizzardApi
     ##
     # @param options [Hash] Request options
     def using_cache?(options)
+      excluded_endpoints = ['/data/wow/token/index']
+      return false if excluded_endpoints.include?(url.path)
+      
       return false if options.key?(:since)
 
       !options.fetch(:ignore_cache, false)
