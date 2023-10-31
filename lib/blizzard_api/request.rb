@@ -79,18 +79,40 @@ module BlizzardApi
       BlizzardApi.save_access_token(JSON.parse(response.body))
     end
 
+    # def request(url, **options)
+    #   # Creates the whole url for request
+    #   parsed_url = URI.parse(url)
+    #   data = using_cache?(options) ? find_in_cache(parsed_url.to_s) : nil
+
+    #   # If data was found that means cache is enabled and valid
+    #   return prepare_response data if data
+
+    #   response = consume_api parsed_url, **options
+
+    #   handle_cache_on_response parsed_url, response, **options
+    # end
+
     def request(url, **options)
-      # Creates the whole url for request
+      # Creates the whole URL for the request
       parsed_url = URI.parse(url)
+    
+      # Check if the URL matches the excluded endpoint
+      excluded_endpoints = ['/data/wow/token/index']
+      if excluded_endpoints.include?(parsed_url.path)
+        # If the URL matches an excluded endpoint, don't use the cache
+        return consume_api(parsed_url, **options)
+      end
+    
       data = using_cache?(options) ? find_in_cache(parsed_url.to_s) : nil
-
-      # If data was found that means cache is enabled and valid
-      return prepare_response data if data
-
-      response = consume_api parsed_url, **options
-
-      handle_cache_on_response parsed_url, response, **options
+    
+      # If data was found, that means cache is enabled and valid
+      return prepare_response(data) if data
+    
+      response = consume_api(parsed_url, **options)
+    
+      handle_cache_on_response(parsed_url, response, **options)
     end
+    
 
     def handle_cache_on_response(parsed_url, response, **options)
       case response.code.to_i
