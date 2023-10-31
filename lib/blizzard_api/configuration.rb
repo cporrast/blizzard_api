@@ -51,6 +51,13 @@ module BlizzardApi
     attr_accessor :redis_port
 
     ##
+    # @!attribute redis_port
+    #   Redis url.
+    #   @see https://redis.io/
+    #   @return [Integer] Redis port
+    attr_accessor :redis_url
+
+    ##
     # @!attribute redis_database
     #   Redis databse.
     #   @see https://redis.io/
