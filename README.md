@@ -7,14 +7,19 @@ This gem allow you to interface with the new blizzard api (2018) using the OAuth
 **Important**: This gem does not support, nor will support China endpoints. 
 
 ## Table of contents
-1. [Installation](#1-installation)
-2. [Configuration](#2-configuration)
-3. [Basic usage](#3-basic-usage)
-4. [Available endpoints](#4-available-endpoints)
-   - 4.1. [World of Warcraft endpoints](#41-world-of-warcraft-endpoints)
-   - 4.2. [Diablo III endpoints](#42-diablo-iii-endpoints)
-   - 4.3. [Hearthstone endpoints](#43-hearthstone-endpoints)
-   - 4.4. [Starcraft II endpoints](#43-starcraft-ii-endpoints)
+- [Blizzard Api](#blizzard-api)
+  - [Table of contents](#table-of-contents)
+  - [1. Installation](#1-installation)
+  - [2. Configuration](#2-configuration)
+  - [3. Basic usage](#3-basic-usage)
+    - [3.1 Searchable endpoints](#31-searchable-endpoints)
+  - [4. Available endpoints](#4-available-endpoints)
+    - [4.1. World of Warcraft endpoints](#41-world-of-warcraft-endpoints)
+    - [4.2. Diablo III endpoints](#42-diablo-iii-endpoints)
+    - [4.3. Hearthstone endpoints](#43-hearthstone-endpoints)
+    - [4.4. Starcraft II endpoints](#44-starcraft-ii-endpoints)
+  - [Contributing](#contributing)
+  - [License](#license)
 
 ## 1. Installation
 
