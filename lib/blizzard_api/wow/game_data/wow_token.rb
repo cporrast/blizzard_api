@@ -10,7 +10,7 @@ module BlizzardApi
     # You can get an instance of this class using the default region as follows:
     #   api_instance = BlizzardApi::Wow.wow_token
     class WowToken < GenericDataEndpoint
-      setup 'token', :dynamic, CACHE_ZERO
+      setup 'token', :dynamic, CACHE_QUARTER_HOUR
 
       def get
         raise BlizzardApi::ApiException, 'This endpoint does not have a get method'
