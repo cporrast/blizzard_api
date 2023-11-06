@@ -26,7 +26,8 @@ module BlizzardApi
   # Simplifies the requests to Blizzard APIS
   class Request
     include ApiStandards
-
+    
+    CACHE_ZERO = 0
     # One hour cache
     CACHE_HOUR = 3600
     # One day cache
